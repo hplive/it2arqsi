@@ -5,7 +5,11 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var orders = require('./routes/orders');
 
-var port = 3000;
+var port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+
+}
 
 var app = express();
 
