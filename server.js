@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var orders = require('./routes/orders');
 
+var cors = require('cors');
+
+
 var port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
@@ -12,6 +15,7 @@ if (port == null || port == "") {
 }
 
 var app = express();
+
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +31,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 app.use('/', index);
 app.use('/api', orders);
-
+app.use(cors());
 app.listen(port, function(){
     console.log('Server started on port' + port);
 });
