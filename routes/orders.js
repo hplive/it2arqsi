@@ -4,7 +4,7 @@ var mongojs = require('mongojs');
 //var db = mongojs('mongodb://teste:teste123@ds143593.mlab.com:43593/teste');
 var db = mongojs('mongodb://teste:teste123@ds143593.mlab.com:43593/teste');
 const http = require('http');
-var urlpath="http://sicit1api.azurewebsites.net/"
+var urlpath="http://sicit1api.azurewebsites.net";
 
 // Get All Orders
 router.get('/orders', function (req, res, next) {
